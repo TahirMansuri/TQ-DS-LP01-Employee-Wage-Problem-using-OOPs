@@ -2,13 +2,13 @@ package com.bridgelabz;
 
 import java.util.ArrayList;
 
-public class EmployeeWageBuilderArray implements EmployeeWage {
+public class EmployeeWageBuilder implements EmployeeWage {
     private int noOfCompanies = 0;
 
     //ArrayList for Company Wage Object
     ArrayList<CompanyEmpWage> lstCompanyEmpWages;
 
-    public EmployeeWageBuilderArray() {
+    public EmployeeWageBuilder() {
         lstCompanyEmpWages = new ArrayList<>();
     }
 
@@ -55,9 +55,9 @@ public class EmployeeWageBuilderArray implements EmployeeWage {
     public static void main(String[] args) {
        //Welcome Message for Initial Purpose
         System.out.println("Welcome to Employee Wages Problem Developed by Tahir Mansuri.");
-        EmployeeWageBuilderArray employeeWageBuilderArray = new EmployeeWageBuilderArray();
-        employeeWageBuilderArray.addCompanyEmpWages("JIO",20,5,25);
-        employeeWageBuilderArray.addCompanyEmpWages("VODAFONE",15,30,30);
-        employeeWageBuilderArray.calculateEmpWage();
+        EmployeeWageBuilder employeeWageBuilder = new EmployeeWageBuilder();
+        employeeWageBuilder.addCompanyEmpWages("JIO",20,5,25);
+        employeeWageBuilder.addCompanyEmpWages("VODAFONE",15,30,30);
+        employeeWageBuilder.calculateEmpWage();
     }
 }
