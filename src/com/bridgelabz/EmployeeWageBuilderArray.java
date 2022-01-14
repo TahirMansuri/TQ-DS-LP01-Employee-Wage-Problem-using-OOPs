@@ -1,22 +1,25 @@
 package com.bridgelabz;
 
+import java.util.ArrayList;
+
 public class EmployeeWageBuilderArray implements EmployeeWage {
     private int noOfCompanies = 0;
-    private CompanyEmpWage[] companyEmpWages;
+
+    //ArrayList for Company Wage Object
+    ArrayList<CompanyEmpWage> lstCompanyEmpWages;
 
     public EmployeeWageBuilderArray() {
-        companyEmpWages = new CompanyEmpWage[5];
+        lstCompanyEmpWages = new ArrayList<>();
     }
 
     private void addCompanyEmpWages(String company, int wagePerHr, int numOfWorkingDays, int maxHrsPerMonth) {
-        companyEmpWages[noOfCompanies] = new CompanyEmpWage(company,wagePerHr,numOfWorkingDays,maxHrsPerMonth);
-        noOfCompanies++;
+        lstCompanyEmpWages.add(new CompanyEmpWage(company,wagePerHr,numOfWorkingDays,maxHrsPerMonth));
     }
 
     public void calculateEmpWage() {
-        for (int i = 0; i < noOfCompanies; i++) {
-            companyEmpWages[i].setTotalEmpWage(this.calculateEmpWage(companyEmpWages[i]));
-            System.out.println(companyEmpWages[i].toString());
+        for (CompanyEmpWage companyEmpWage : lstCompanyEmpWages) {
+            companyEmpWage.setTotalEmpWage(this.calculateEmpWage(companyEmpWage));
+            System.out.println(companyEmpWage.toString());
         }
     }
 
